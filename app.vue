@@ -1,5 +1,6 @@
 <script setup lang="ts">
 const isFetching = ref<boolean>(true)
+const isFetching = ref<boolean>(true)
 </script>
 
 <template>
