@@ -1,11 +1,14 @@
 <script setup lang="ts">
-const isFetching = ref<boolean>(true)
-// const isFetching = ref<boolean>(true)
+const counterStore = useCounterStore()
 </script>
 
 <template>
-  <div class="w-screen h-12 border bg-red-400">
-    <UButton :loading="isFetching" :disabled="isFetching"  variant="soft" icon="heroicons:user" />
-    <UButton :loading="isFetching" :disabled="isFetching"  variant="soft" icon="heroicons:user" />
+  <div class="w-screen flex-col gap-4 text-white h-screen flex justify-center items-center border bg-gray-900">
+    {{ counterStore.count }}
+
+    <div class="flex gap-2">
+      <UButton icon="heroicons:plus" @click="counterStore.counterPlus" />
+      <UButton icon="heroicons:minus" @click="counterStore.counterMinus" />
+    </div>
   </div>
 </template>
